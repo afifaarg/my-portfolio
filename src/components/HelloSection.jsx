@@ -1,10 +1,9 @@
-import React from 'react';
-
-const HelloSection = () => {
+export default function HelloSection() {
+  //Nice work with the handleScroll function. i like how smooth it scrolls.
   const handleScroll = () => {
-    const nextSection = document.getElementById('aboutMe');
+    const nextSection = document.getElementById("aboutMe");
     if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+      nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -22,15 +21,29 @@ const HelloSection = () => {
               I bring life to your ideas.
             </h3>
             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-            a software engineer specializing in web development. Currently freelancing, I focus on creating accessible and engaging digital experiences. My work combines advanced technical skills with a keen eye for design to deliver exceptional web solutions.
+              a software engineer specializing in web development. Currently
+              freelancing, I focus on creating accessible and engaging digital
+              experiences. My work combines advanced technical skills with a
+              keen eye for design to deliver exceptional web solutions.
             </p>
             <div className="mt-5 sm:mt-8 sm:flex justify-center">
-            <button 
+              <button
                 onClick={handleScroll}
                 className="flex items-center justify-center p-2 mt-4 text-gray-500 hover:text-gray-700"
               >
-                <svg className="w-10 h-10 animate-bounce" fill="none" stroke="#6EFFE1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                <svg
+                  className="w-10 h-10 animate-bounce"
+                  fill="none"
+                  stroke="#6EFFE1"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
                 </svg>
               </button>
             </div>
@@ -39,6 +52,4 @@ const HelloSection = () => {
       </div>
     </div>
   );
-};
-
-export default HelloSection;
+}

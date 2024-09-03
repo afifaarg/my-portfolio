@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes for typechecking in React, it's a library that helps to typecheck the props passed to components to ensure that they are the correct type.
 
-const Entryanimation = ({ onAnimationEnd }) => {
+export default function Entryanimation({ setShowHomePage }) {
   const [isScaleOut, setIsScaleOut] = useState(false);
 
   useEffect(() => {
     const scaleOutTimer = setTimeout(() => {
-      console.log('Starting scale-out-center animation');
+      // Avoid letting console logs in your code.
       setIsScaleOut(true); // Trigger the scale-out animation
     }, 5000); // Trigger scale-out after initial animations complete
 
     const endTimer = setTimeout(() => {
-      onAnimationEnd(); // Notify parent component that animation has ended
+      setShowHomePage(true); // Setting showHomePage to true after 5s will end the animation and display the home page.
     }, 5500); // 0.5s after scale-out starts
 
     return () => {
       clearTimeout(scaleOutTimer);
       clearTimeout(endTimer);
     };
-  }, [onAnimationEnd]);
+  }, [setShowHomePage]);
 
   return (
     <div className="text-center text-white flex flex-col justify-center items-center h-screen">
-      <h1 className="text-4xl text-[#011d38] mb-4">Welcome to the Home Page!</h1>
+      {/*Remove the h1 saying welcome to the home page*/}
       <svg
         version="1.1"
         id="Layer_1"
@@ -30,9 +31,9 @@ const Entryanimation = ({ onAnimationEnd }) => {
         x="0px"
         y="0px"
         viewBox="0 0 1850 1850"
-        style={{ enableBackground: 'new 0 0 1850 1850' }}
+        style={{ enableBackground: "new 0 0 1850 1850" }}
         xmlSpace="preserve"
-        className={`mx-auto ${isScaleOut ? 'scale-out-center' : ''}`} // Corrected dynamic className syntax
+        className={`mx-auto ${isScaleOut ? "scale-out-center" : ""}`} // Corrected dynamic className syntax
       >
         <defs>
           <radialGradient
@@ -42,8 +43,8 @@ const Entryanimation = ({ onAnimationEnd }) => {
             r="586.6596"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0" style={{ stopColor: '#6EFFE1' }} />
-            <stop offset="1" style={{ stopColor: '#1D9BB8' }} />
+            <stop offset="0" style={{ stopColor: "#6EFFE1" }} />
+            <stop offset="1" style={{ stopColor: "#1D9BB8" }} />
           </radialGradient>
         </defs>
         <style type="text/css">
@@ -112,6 +113,10 @@ const Entryanimation = ({ onAnimationEnd }) => {
       </svg>
     </div>
   );
-};
+}
 
-export default Entryanimation;
+// Define the prop types for the Entryanimation component, setShowHomePage is a function that is required.
+
+Entryanimation.propTypes = {
+  setShowHomePage: PropTypes.func.isRequired,
+};

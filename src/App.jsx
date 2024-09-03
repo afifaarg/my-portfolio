@@ -1,34 +1,28 @@
-import React, { useState } from 'react';
-import HelloSection from './components/HelloSection';
-import ContactSideBar from './components/ContactSideBar';
-import AboutMe from './components/AboutMe';
-import EmailSideBar from './components/EmailSideBar';
-import Entryanimation from './components/EntryAnimation';
-import Navbar from './components/NavBar';
-import './App.css'; // Tailwind CSS should be imported in index.css or App.css
+import { useState } from "react";
+import HelloSection from "./components/HelloSection";
+import ContactSideBar from "./components/ContactSideBar";
+import AboutMe from "./components/AboutMe";
+import EmailSideBar from "./components/EmailSideBar";
+import Entryanimation from "./components/EntryAnimation";
+import Navbar from "./components/NavBar";
+import "./App.css"; // Tailwind CSS should be imported in index.css or App.css
 
-const App = () => {
+export default function App() {
   const [showHomePage, setShowHomePage] = useState(false);
 
   return (
-    <div className='relative'>
+    <section>
       {!showHomePage ? (
-        <Entryanimation onAnimationEnd={() => setShowHomePage(true)} />
+        <Entryanimation setShowHomePage={setShowHomePage} /> //setShowHomePage is a function itself that set showHomePage to true or false.
       ) : (
-        <>
+        <section>
           <Navbar />
-          <div className='absolute'>
-            <ContactSideBar />
-          </div>
+          <ContactSideBar />
           <HelloSection />
           <AboutMe />
-          <div className='absolute'>
-            <EmailSideBar />
-          </div>
-        </>
+          <EmailSideBar />
+        </section>
       )}
-    </div>
+    </section>
   );
-};
-
-export default App;
+}
