@@ -44,6 +44,7 @@ export default function NavBar() {
         </svg>
       </button>
       {/* Backdrop and menu container-start */}
+
       {/* Removed the unnecessary div here.*/}
       <div
         className={`${
