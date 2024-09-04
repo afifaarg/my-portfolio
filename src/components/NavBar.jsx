@@ -82,6 +82,7 @@ export default function NavBar() {
           </li>
         </ul>
       </div>
+
       {/* Backdrop and menu container-end */}
 
       {/* Ajusted this part too */}
