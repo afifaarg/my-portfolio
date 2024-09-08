@@ -21,7 +21,7 @@ export default function HelloSection() {
               I bring life to your ideas.
             </h3>
             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              a software engineer specializing in web development. Currently
+              A software engineer specializing in web development. Currently
               freelancing, I focus on creating accessible and engaging digital
               experiences. My work combines advanced technical skills with a
               keen eye for design to deliver exceptional web solutions.
