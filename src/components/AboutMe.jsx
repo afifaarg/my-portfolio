@@ -1,12 +1,5 @@
-import React, { useEffect } from 'react';
+// Removed React and useEffect imports.
 
-const AboutMe = () => {
- 
-  return (
-    <div className='h-screen' id='aboutMe'>
- 
-    </div>
-  );
-};
-
-export default AboutMe;
+export default function AboutMe() {
+  return <div className="h-screen" id="aboutMe"></div>;
+}
