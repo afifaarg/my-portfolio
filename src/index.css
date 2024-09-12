@@ -6,3 +6,60 @@
 .sideBarContact::after{
   border: 1px white;
 }
+
+/* Typing and Erasing Effect */
+.typing-erasing-effect {
+  border-right: 2px solid #6EFFE1;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(30, end), erasing 2s steps(30, end) 3.5s forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Adjust to the length of "Hi, I’m Afifa Aregoub" */
+  }
+}
+
+@keyframes erasing {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+/* Terminal-like typing effect */
+.terminal {
+  font-family: "Courier New", Courier, monospace;
+  color: #6EFFE1; /* Change color here */
+  background-color: black;
+  padding: 10px;
+  overflow: hidden;
+  width: fit-content;
+  animation: typing-terminal 10s steps(50, end) forwards;
+}
+
+@keyframes typing-terminal {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Optional Blinking Cursor for the terminal */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #6EFFE1;
+  }
+}

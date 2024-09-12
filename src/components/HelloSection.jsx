@@ -8,9 +8,9 @@ export default function HelloSection() {
   };
 
   return (
-    <div className="h-screen flex py-4 justify-center">
+    <div className="h-dvh flex py-2 justify-center">
       <div className="w-3/4">
-        <main className="px-4">
+        <main className="px-4 pt-8">
           <div className="text-left">
             <p className="font-bold text-sm text-gray-500">Hello, my name is</p>
             <br />
@@ -26,7 +26,7 @@ export default function HelloSection() {
               experiences. My work combines advanced technical skills with a
               keen eye for design to deliver exceptional web solutions.
             </p>
-            <div className="mt-5 sm:mt-8 sm:flex justify-center">
+            <div className="mt-5 sm:mt-8 flex justify-center ">
               <button
                 onClick={handleScroll}
                 className="flex items-center justify-center p-2 mt-4 text-gray-500 hover:text-gray-700"

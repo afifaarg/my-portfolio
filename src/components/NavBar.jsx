@@ -21,7 +21,7 @@ export default function NavBar() {
       <button
         data-collapse-toggle="navbar-default"
         type="button"
-        className="inline-flex items-center p-2 w-10 h-10 justify-center text-greyText rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-greyText dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex items-center p-2 w-10 h-10 justify-center text-greyText rounded-lg md:hidden hover:bg-gray-100 hover:text-[#011d38] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-greyText dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="navbar-default"
         aria-expanded={isOpen}
         onClick={toggleMenu}
@@ -63,7 +63,7 @@ export default function NavBar() {
             </a>
           </li>
           <li>
-            <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
+            <a href="#experience" className="block py-2 px-3 hover:text-[#6EFFE1]">
               <span className="text-[#6EFFE1] pr-1">02.</span> Experience
             </a>
           </li>
@@ -88,22 +88,22 @@ export default function NavBar() {
       {/* Ajusted this part too */}
       <div
         id="navbar-default"
-        className=" hidden text-greyText w-full font-sm p-4 md:flex justify-end rtl:space-x-reverse "
+        className=" hidden sm:flex  text-greyText w-full font-sm p-4 md:flex justify-end rtl:space-x-reverse "
       >
-        <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1] ">
-          About
+        <a href="#aboutMe" className="block py-2 px-3 hover:text-[#6EFFE1] ">
+          <span className="text-sm text-[#6EFFE1]">01.</span> About
+        </a>
+
+        <a href="#experience" className="block py-2 px-3 hover:text-[#6EFFE1]">
+          <span className="text-sm text-[#6EFFE1]">02.</span> Experience
         </a>
 
         <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
-          Experience
-        </a>
-
-        <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
-          Education
+        <span className="text-sm text-[#6EFFE1]">03.</span> Education
         </a>
 
         <a href="/" className="block py-2 px-3 mr-4 hover:text-[#6EFFE1]">
-          Contact
+        <span className="text-sm text-[#6EFFE1]">04.</span> Contact
         </a>
       </div>
     </nav>

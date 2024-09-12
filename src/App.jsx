@@ -5,6 +5,7 @@ import AboutMe from "./components/AboutMe";
 import EmailSideBar from "./components/EmailSideBar";
 import Entryanimation from "./components/EntryAnimation";
 import Navbar from "./components/NavBar";
+import Experiencetimeline from "./components/Experiencetimeline";
 import "./App.css"; // Tailwind CSS should be imported in index.css or App.css
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <ContactSideBar />
           <HelloSection />
           <AboutMe />
+          <Experiencetimeline />
           <EmailSideBar />
         </section>
       )}
