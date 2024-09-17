@@ -8,36 +8,11 @@ export default function NavBar() {
     setIsOpen(!isOpen);
   };
 
-  // Function to handle scrolling and fix the navbar after the first section
-  const handleScroll = () => {
-    const aboutMeSection = document.getElementById("aboutMe");
-    if (window.scrollY >= aboutMeSection.offsetTop) {
-      setIsFixed(true);
-    } else {
-      setIsFixed(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <nav
-      className={`text-white w-full flex items-center justify-between shadow-lg py-1 px-4 transition-all duration-300 ${
-        isFixed ? "fixed top-0 bg-[#011d38] z-50 shadow-lg" : "relative"
-      }`}
-    >
+    <nav className="text-white w-full flex items-center justify-between shadow-lg py-1 px-4 transition-all duration-300">
       <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
         {/* LOVE THE LOGO */}
-        <img
-          src="/afifa.png"
-          alt="logo"
-          className="py-2 w-24 h-20"
-        />
+        <img src="/afifa.png" alt="logo" className="py-2 w-24 h-20" />
       </a>
 
       <button
@@ -78,23 +53,37 @@ export default function NavBar() {
       >
         <ul className="font-sm p-4 mt-4 space-y-4 text-greyText w-44">
           <li>
-            <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
+            <a href="#aboutMe" className="block py-2 px-3 hover:text-[#6EFFE1]">
               <span className="text-[#6EFFE1] pr-1">01.</span> About
             </a>
           </li>
           <li>
-            <a href="#experience" className="block py-2 px-3 hover:text-[#6EFFE1]">
-              <span className="text-[#6EFFE1] pr-1">02.</span> Experience
+            <a
+              href="#projects"
+              className="block py-2 px-3 hover:text-[#6EFFE1]"
+            >
+              <span className="text-[#6EFFE1] pr-1">02.</span> Projects
             </a>
           </li>
           <li>
-            <a href="#education" className="block py-2 px-3 hover:text-[#6EFFE1]">
-              <span className="text-[#6EFFE1] pr-1">03.</span> Education
+            <a
+              href="#experience"
+              className="block py-2 px-3 hover:text-[#6EFFE1]"
+            >
+              <span className="text-[#6EFFE1] pr-1">03.</span> Experience
             </a>
           </li>
           <li>
-            <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
-              <span className="text-[#6EFFE1] pr-1">04.</span> Contact
+            <a
+              href="#education"
+              className="block py-2 px-3 hover:text-[#6EFFE1]"
+            >
+              <span className="text-[#6EFFE1] pr-1">04.</span> Education
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="block py-2 px-3 hover:text-[#6EFFE1]">
+              <span className="text-[#6EFFE1] pr-1">05.</span> Contact
             </a>
           </li>
         </ul>
@@ -108,14 +97,20 @@ export default function NavBar() {
         <a href="#aboutMe" className="block py-2 px-3 hover:text-[#6EFFE1]">
           <span className="text-sm text-[#6EFFE1]">01.</span> About
         </a>
+        <a href="#projects" className="block py-2 px-3 hover:text-[#6EFFE1]">
+          <span className="text-sm text-[#6EFFE1]">02.</span> Projects
+        </a>
         <a href="#experience" className="block py-2 px-3 hover:text-[#6EFFE1]">
-          <span className="text-sm text-[#6EFFE1]">02.</span> Experience
+          <span className="text-sm text-[#6EFFE1]">03.</span> Experience
         </a>
         <a href="#education" className="block py-2 px-3 hover:text-[#6EFFE1]">
-          <span className="text-sm text-[#6EFFE1]">03.</span> Education
+          <span className="text-sm text-[#6EFFE1]">04.</span> Education
         </a>
-        <a href="/" className="block py-2 px-3 mr-4 hover:text-[#6EFFE1]">
-          <span className="text-sm text-[#6EFFE1]">04.</span> Contact
+        <a
+          href="#contact"
+          className="block py-2 px-3 mr-4 hover:text-[#6EFFE1]"
+        >
+          <span className="text-sm text-[#6EFFE1]">05.</span> Contact
         </a>
       </div>
     </nav>
