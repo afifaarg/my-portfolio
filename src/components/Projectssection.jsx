@@ -14,8 +14,14 @@ export default function Projects() {
     setCurrentImage(null);
   };
 
-  const erpImages = ["/erp_app/example1.png", "/erp_app/example2.png"];
-  const crmImages = ["/crm_app/example1.png", "/crm_app/example2.png"];
+  const erpImages = [
+    "/portfolio-afifa/erp_app/example1.png",
+    "/portfolio-afifa/erp_app/example2.png",
+  ];
+  const crmImages = [
+    "/portfolio-afifa/crm_app/example1.png",
+    "/portfolio-afifa/crm_app/example2.png",
+  ];
   const PortfolioImages = [
     "/my_portfolio/example1.png",
     "/my_portfolio/example2.png",

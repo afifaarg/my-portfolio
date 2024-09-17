@@ -12,7 +12,11 @@ export default function NavBar() {
     <nav className="text-white w-full flex items-center justify-between shadow-lg py-1 px-4 transition-all duration-300">
       <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
         {/* LOVE THE LOGO */}
-        <img src="/afifa.png" alt="logo" className="py-2 w-24 h-20" />
+        <img
+          src="/portfolio-afifa/afifa.png"
+          alt="logo"
+          className="py-2 w-24 h-20"
+        />
       </a>
 
       <button

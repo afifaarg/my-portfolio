@@ -14,7 +14,7 @@ export default function Educationpath() {
       </div>
 
       {/* Timeline Container */}
-      <div className="relative border-l-2 border-[#6EFFE1] space-y-12">
+      <div className="relative space-y-12">
         {/* Master's Degree */}
         <div className="relative flex items-start pl-8">
           {/* SVG Icon */}
