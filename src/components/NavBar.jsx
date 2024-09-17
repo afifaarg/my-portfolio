@@ -1,20 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  // Use (/) instead of (#) for the href attribute in the anchor tags.
+
+  // Function to handle scrolling and fix the navbar after the first section
+  const handleScroll = () => {
+    const aboutMeSection = document.getElementById("aboutMe");
+    if (window.scrollY >= aboutMeSection.offsetTop) {
+      setIsFixed(true);
+    } else {
+      setIsFixed(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="text-white w-full flex items-center justify-between p-4">
+    <nav
+      className={`text-white w-full flex items-center justify-between shadow-lg py-1 px-4 transition-all duration-300 ${
+        isFixed ? "fixed top-0 bg-[#011d38] z-50 shadow-lg" : "relative"
+      }`}
+    >
       <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
         {/* LOVE THE LOGO */}
         <img
           src="/afifa.png"
           alt="logo"
-          className="py-2 w-24 h-20" // You can use you sizing here, you just need to convert px to rem. Use this website.
+          className="py-2 w-24 h-20"
         />
       </a>
 
@@ -43,9 +65,8 @@ export default function NavBar() {
           />
         </svg>
       </button>
-      {/* Backdrop and menu container-start */}
 
-      {/* Removed the unnecessary div here.*/}
+      {/* Mobile Menu */}
       <div
         className={`${
           isOpen
@@ -55,7 +76,6 @@ export default function NavBar() {
         id="navbar-default"
         onClick={() => setIsOpen(false)}
       >
-        {/* Moved text color in ul to avoid repitions. Also removed the rounded and the flex cause you don't need it here and the onCilck too cause the href will refresh the page so he'll set isOpen to its default value. */}
         <ul className="font-sm p-4 mt-4 space-y-4 text-greyText w-44">
           <li>
             <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
@@ -68,42 +88,34 @@ export default function NavBar() {
             </a>
           </li>
           <li>
-            <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
+            <a href="#education" className="block py-2 px-3 hover:text-[#6EFFE1]">
               <span className="text-[#6EFFE1] pr-1">03.</span> Education
             </a>
           </li>
           <li>
-            <a
-              href="/"
-              className="block py-2 px-3 rounded hover:text-[#6EFFE1]"
-            >
+            <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
               <span className="text-[#6EFFE1] pr-1">04.</span> Contact
             </a>
           </li>
         </ul>
       </div>
 
-      {/* Backdrop and menu container-end */}
-
-      {/* Ajusted this part too */}
+      {/* Desktop Menu */}
       <div
         id="navbar-default"
-        className=" hidden sm:flex  text-greyText w-full font-sm p-4 md:flex justify-end rtl:space-x-reverse "
+        className="hidden sm:flex text-greyText w-full font-sm p-4 md:flex justify-end rtl:space-x-reverse"
       >
-        <a href="#aboutMe" className="block py-2 px-3 hover:text-[#6EFFE1] ">
+        <a href="#aboutMe" className="block py-2 px-3 hover:text-[#6EFFE1]">
           <span className="text-sm text-[#6EFFE1]">01.</span> About
         </a>
-
         <a href="#experience" className="block py-2 px-3 hover:text-[#6EFFE1]">
           <span className="text-sm text-[#6EFFE1]">02.</span> Experience
         </a>
-
-        <a href="/" className="block py-2 px-3 hover:text-[#6EFFE1]">
-        <span className="text-sm text-[#6EFFE1]">03.</span> Education
+        <a href="#education" className="block py-2 px-3 hover:text-[#6EFFE1]">
+          <span className="text-sm text-[#6EFFE1]">03.</span> Education
         </a>
-
         <a href="/" className="block py-2 px-3 mr-4 hover:text-[#6EFFE1]">
-        <span className="text-sm text-[#6EFFE1]">04.</span> Contact
+          <span className="text-sm text-[#6EFFE1]">04.</span> Contact
         </a>
       </div>
     </nav>
