@@ -7,6 +7,7 @@ import Entryanimation from "./components/EntryAnimation";
 import Navbar from "./components/NavBar";
 import Experiencetimeline from "./components/Experiencetimeline";
 import "./App.css"; // Tailwind CSS should be imported in index.css or App.css
+import Educationpath from "./components/Educationpath";
 
 export default function App() {
   const [showHomePage, setShowHomePage] = useState(false);
@@ -22,6 +23,7 @@ export default function App() {
           <HelloSection />
           <AboutMe />
           <Experiencetimeline />
+          <Educationpath />
           <EmailSideBar />
         </section>
       )}
